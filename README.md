@@ -1,5 +1,4 @@
 # HW-Week14-Tech-Blog
-# HW-Week13-E-Commerce-Back-End
 
 ## Description
 In this project the goal is to build a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well.
