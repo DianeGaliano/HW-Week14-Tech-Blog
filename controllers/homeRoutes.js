@@ -64,9 +64,7 @@ router.get('/Post/:id', (req, res) => {
   })
   .then((postData) => {
     if (!postData) {
-      res.status(404).json ({
-        message: 'Post with this id not found.'
-      });
+      res.status(404).json ({message: 'Post with this id not found.'});
     }
     const posts = postData.get({ plain: true });
     res.render('singlePost', { posts, loggedIn: req.session.loggedIn });
@@ -107,8 +105,8 @@ router.get('/postComments', (req, res) => {
       res.status(404).json({message: 'No post found with this id.'});
       return;
     }
-    const Post = postData.get({plain: true});
-    res.render('postComments', { Post, loggedIn: req.session.loggedIn});
+    const posts = postData.get({plain: true});
+    res.render('postComments', { posts, loggedIn: req.session.loggedIn});
   })
   .catch((err) => {
     console.log(err);
