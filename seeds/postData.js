@@ -1,3 +1,5 @@
+const { Post } = require('../models');
+const postData =
 [
     {
       "postTitle": "First post",
@@ -14,5 +16,9 @@
       "postContent": "Whats up",
       "user_id": 3
     }
-  ]
+  ];
+
+  const seedPost = () => Post.beforeBulkCreate(postData);
+
+  module.exports = seedPost;
   

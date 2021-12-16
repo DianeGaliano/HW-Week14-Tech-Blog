@@ -1,3 +1,5 @@
+const { Comment } = require('../models');
+const commentData =
 [
     {
       "content": "I was here 1st!",
@@ -14,5 +16,9 @@
       "user_id": 3,
       "post_id": 3
     }
-  ]
+  ];
+
+  const seedComment = () => Comment.beforeBulkCreate(commentData);
+
+  module.exports = seedComment;
   
