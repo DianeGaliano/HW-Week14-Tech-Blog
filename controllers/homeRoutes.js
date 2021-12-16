@@ -6,11 +6,11 @@ const { Post, User, Comment} = require('../models');
 router.get('/', (req, res) => {
   Post.findAll(
     {
-      attributes: ['id', 'title', 'content', 'created_at'],
+      attributes: ['id', 'postTitle', 'postContent', 'date_created'],
       include: [
         {
           model: Comment,
-          attributes: [ 'id', 'comment_text', 'post_id', 'user_id', 'create_at'],
+          attributes: [ 'id', 'content', 'post_id', 'user_id', 'date_created'],
           include: {
             model: User,
             attributes: ['username'],
@@ -46,11 +46,11 @@ router.get('/Post/:id', (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ['id', 'content', 'post_id', 'user_id', 'created_at'],
+    attributes: ['id', 'postContent', 'post_id', 'user_id', 'date_created'],
     include: [
       {
         model: Comment, 
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        attributes: ['id', 'content', 'post_id', 'user_id', 'date_created'],
         include: {
           model: User,
           attributes: ['username'],
@@ -86,11 +86,11 @@ router.get('/postComments', (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: [ 'id', 'content', 'title', 'created_at'],
+    attributes: [ 'id', 'postContent', 'postTitle', 'date_created'],
     include: [
       {
         model: Comment,
-        attributes: [ 'id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        attributes: [ 'id', 'content', 'post_id', 'user_id', 'date_created'],
         include: {
           model: User,
           attributes: ['username'],
