@@ -1,5 +1,7 @@
 const { User, Post, Comment } = require('../../models');
-const router = reqire('express').Router();
+const router = require('express').Router();
+const withAuth = require('../../utils/auth');
+
 router.get('/', (req, res) => {
   User.findAll({
     attributes: {exclude:['password']},
@@ -79,13 +81,11 @@ router.post('/login', async (req, res) => {
   .then((userData) => {
 
     if (!userData) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+      res.status(400).json({ message: 'Incorrect email or password, please try again' });
       return;
     }
 
-    const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = userData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
@@ -119,7 +119,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
   User.update(req.body, {
     individualHooks: true,
     where: {
@@ -139,7 +139,7 @@ router.put('/:id', (req, res) => {
   });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
   User.destroy({
     where: {
       id: req.params.id,

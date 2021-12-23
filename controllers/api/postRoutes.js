@@ -21,12 +21,14 @@ router.get('/', (req, res) => {
       },
     ],
   })
-  .then((postData) => {
-    res.json(postData.reverse()))
-    .catch ((err) => {
+  .then ((postData) => {
+    res.json(postData)
+    .catch((err)=> {
       console.log(err);
       res.status(500).json(err);
     });
+  });
+    
   
 });
 
