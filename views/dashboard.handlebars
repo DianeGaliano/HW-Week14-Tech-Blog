@@ -1,0 +1,53 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tech Blog</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+      integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading">Tech Blog</a>
+
+        <ul class="pure-menu-list">
+          {{#if logged_in}}
+            <li class="pure-menu-item"><button
+                class="btn"
+                id="logout"
+                class="pure-menu-link"
+              >Logout</button></li>
+          {{else}}
+            <li class="pure-menu-item"><a
+                href="/login"
+                class="pure-menu-link"
+              >Login</a></li>
+          {{/if}}
+        </ul>
+      </div>
+    </div>
+
+    <div id="response-message"></div>
+    <main class="splash-container">
+      {{{body}}}
+
+    </main>
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+  </body>
+</html>
