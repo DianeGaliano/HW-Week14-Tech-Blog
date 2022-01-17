@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link rel="stylesheet" href="/public/css/style.css">
 <div class="content">
-    <h2 class="content-head is-center">Blog</h2>
+    <h2 class="content-head is-center">Tech Blog</h2>
 {{!-- Login --}}
     <div class="pure-g">
         <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
@@ -11,7 +11,7 @@
                 <fieldset>
 
                     <label for="empId">User Name</label>
-                    <input id="emp-login" type="text" placeholder="Employee ID">
+                    <input id="emp-login" type="text" placeholder="User Name">
 
 
                     <label for="email">Your Email</label>
@@ -25,5 +25,26 @@
                 </fieldset>
             </form>
         </div>
+{{!-- Sign Up --}}
+        <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+            <form class="pure-form pure-form-stacked" id="signup-form">
+                <fieldset>
 
-<script src="/public/js/login.js"></script>
+                    <label for="empId">User Name</label>
+                    <input id="emp-signup" type="text" placeholder="User Name">
+
+                    <label for="name">Your Name</label>
+                    <input id="name-signup" type="text" placeholder="Your Name">
+
+                    <label for="email">Your Email</label>
+                    <input id="email-signup" type="email" placeholder="Your Email">
+
+                    <label for="password">Your Password</label>
+                    <input id="password-signup" type="password" placeholder="Your Password">
+
+                    <button type="submit" class="pure-button">: Sign Up</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+<script src="./js/login.js"></script>

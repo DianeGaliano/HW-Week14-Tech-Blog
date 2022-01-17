@@ -1,10 +1,13 @@
-{{#each users as |user| }}
-<div class="row align-center mb-5">
-  <div class="col-md-6">
-    <h2>{{{get_emoji}}} {{user.name}}</h2>
-  </div>
-  <div class="col-md-6">
-    <h3><a href="mailto:{{user.email}}">{{user.email}}</a></h3>
+<div>
+  <div class="splash-container">
+    <div class="splash">
+      <h1 class="splash-head">Welcome! </h1>
+      <p class="splash-subhead">
+        Login in to start.
+      </p>
+      <p>
+        <a href="/login" class="pure-button pure-button-primary">Login</a>
+      </p>
+    </div>
   </div>
 </div>
-{{/each}}

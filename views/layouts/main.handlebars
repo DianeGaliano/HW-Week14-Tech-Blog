@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -23,9 +22,10 @@
   <body>
     <div class="header">
       <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-        <a class="pure-menu-heading">Blog</a>
+        <a class="pure-menu-heading">Tech Blog</a>
 
         <ul class="pure-menu-list">
+  
           {{#if logged_in}}
             <li class="pure-menu-item"><button
                 class="btn"
@@ -34,7 +34,7 @@
               >Logout</button></li>
           {{else}}
             <li class="pure-menu-item"><a
-                href="/login"
+                href="/views/login.handlebars"
                 class="pure-menu-link"
               >Login</a></li>
           {{/if}}
@@ -48,8 +48,7 @@
 
     </main>
     {{#if logged_in}}
-      <script src="/public/js/logout.js"></script>
+      <script src="/js/logout.js"></script>
     {{/if}}
   </body>
-  {{!-- <script src="/public/js/login.js"></script> --}}
 </html>
